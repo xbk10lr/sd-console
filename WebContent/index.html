@@ -1,70 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head id="Head1">
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<title>收单平台日终控制系统</title>
-<meta name="KEYWords" contect="VIEWUI,VIEW_UI_EASYUI,EasyUI,后台管理系统,酷设网">
-<meta name="description" contect="收单平台日终控制系统">
-<meta property="og:title" content="EasyUI">
-<meta property="og:description" content="HTML, CSS, JS">
-
-<!-- Meta -->
-
-<link rel="Bookmark" href="assets/default/images/logoIco.ico" />
-<link rel="Shortcut Icon" href="assets/default/images/logoIco.ico" />
-<link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
-<link href="assets/js/themes/default/easyui.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
-
-
-</head>
-<body class="easyui-layout vui-easyui" scroll="no">
-<noscript>
-    <!-- <div class="bowerPrompt" class="bowerPrompt">
-        <img src="assets/images/noscript.gif" alt='抱歉，请开启脚本支持！' />
-    </div> -->
-</noscript>
-<!-- 头部 -->
-<div data-options="region:'north',split:false,border:false,border:false" class="viewui-navheader">
-	<!-- header start -->
-	<!-- 菜单横栏 -->
-	<ul class="viewui-navmenu"></ul>
-	<div class="viewui-user">
-        <div class="user-photo">
-            <i class="fa fa-user-circle-o"></i>
-        </div>
-        <h4 class="user-name ellipsis">测试</h4>
-        <i class="fa fa-angle-down xiala"></i>
-
-    </div>
-</div>
-
-<!-- 左侧菜单 -->
-<div data-options="region:'west',hide:true,split:false,border:false" title="导航菜单" class="LeftMenu" id="west">
-    <div id="nav" class="easyui-accordion" data-options="fit:true,border:false"></div>
-</div>
-<!-- // 左侧菜单 -->
-
-<!-- home -->
-<div data-options="region:'center'" id="mainPanle" class="home-panel">
-	<!-- <div id="layout_center_plan" class="easyui-panel"  data-options="fit:true,style:'{overflow:hidden}',closed:false,closable:true,
-	tools:[{
-				iconCls:'refresh-panel fa fa-refresh ',
-				handler:function(){firstrefresh()}
-			}]"
-	 style="overflow:hidden">
-	</div> -->
-
-</div>
-<!-- // home -->
-
-<script src="assets/js/jquery2.1.1.js" type="text/javascript"></script>
-<script src="assets/js/jquery.easyui.min.js" type="text/javascript"></script>
-<script src='assets/js/index2.js' type="text/javascript"></script>
-<script src='assets/js/system.menu2.js' type="text/javascript"></script>
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>DataGrid</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<!--让easyUI支持中文-->
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+  	<script type="text/javascript">
+  		var url;
+      function addStu(){
+	  	 $("#dlg").dialog({closed:false});
+		 url="stu?flag=addStu";
+	  }
+	  function editStu(){
+	  	 var row=$("#dg").datagrid("getSelected");
+		 if(row){
+		 $("#dlg").dialog({closed:false});
+		  $("#fm").form("load",row);
+		  url="stu?flag=uptStu&&id="+row.stuId;
+		 }
+		 
+	  }
+	  function delStu(){
+	  	 var row=$("#dg").datagrid("getSelected");
+		 if(row){
+		 	$.messager.confirm('确认','您确认想要删除记录吗？',function(r){    
+		    if (r){    
+		        $.post('stu?flag=delStu',{id:row.stuId},function(data){
+					//alert(data);
+					if(data.result)
+					{
+						$("#dg").datagrid("reload");
+					}else{
+						
+					}
+					
+				},"json");    
+		    }    
+		}); 
+		 }
+	  }
+	  function saveStu(){
+	  	$('#fm').form('submit', {    
+		    url:url,    
+		    onSubmit: function(){  
+			  //表单验证  
+		    },    
+		    success:function(data){    
+		       var data=eval("("+data+")");
+			   if(data.result){
+			   	  $('#dlg').dialog({closed:true});
+				  $("#dg").datagrid("reload");
+			   }   
+		    }    
+		}); 
+	  }
+	</script>
+  </head>
+  <body>   
+   
+   <table id="dg" class="easyui-datagrid" style="width:700px;height:350px"   
+        data-options="url:'stu?flag=getAllStu',fitColumns:true,singleSelect:true,pagination:true,toolbar:'#tb'">   
+    <thead>   
+        <tr>   
+            <th data-options="field:'stuNum',width:100">学号</th>   
+            <th data-options="field:'stuName',width:100">姓名</th> 
+            <th data-options="field:'stuSex',width:100">性别</th>
+			<th data-options="field:'stuAge',width:100">年龄</th>
+			<th data-options="field:'stuQQ',width:100">QQ</th>   
+        </tr>   
+    </thead>   
+   </table>  
+   <div id="tb">
+   	 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'" onclick="addStu()"> 新建</a>
+	 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'" onclick="editStu()"> 编辑</a>
+	 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" onclick="delStu()"> 删除</a>
+   </div>
+   <div id="dlg" class="easyui-dialog" style="width:300px;height:200px;background:gray" data-options="buttons:'#btns',closed:true">
+   	   <form id="fm" method="post">
+   	   	   <center>学员信息</center>
+   	   	   学号:<input type="text" name="stuNum"/><br/>
+		   姓名:<input type="text" name="stuName"/><br/>
+		   性别:<input type="text" name="stuSex"/><br/>
+		   年龄:<input type="text" name="stuAge"/><br/>
+		  QQ:<input type="text" name="stuQQ"/><br/>
+   	   </form>
+   </div>
+   <div id="btns">
+   	<a href="#" class="easyui-linkbutton" onclick="saveStu()">保存</a>
+	 <a href="#" class="easyui-linkbutton" onclick="javascript:$('#dlg').dialog({closed:true})">取消</a>
+   </div>
+</body>  
 </html>

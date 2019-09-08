@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>Tree</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#myId").tree({
+				url:'tree_data.json',
+				animate:false
+			});
+		})	   
+	</script>
+  </head>
+  <body>   
+<!--
+<ul id="tt" class="easyui-tree">   
+    <li>   
+        <span>Folder</span>   
+        <ul>   
+            <li>   
+                <span>Sub Folder 1</span>   
+                <ul>   
+                    <li>   
+                        <span><a href="#">File 11</a></span>   
+                    </li>   
+                    <li>   
+                        <span>File 12</span>   
+                    </li>   
+                    <li>   
+                        <span>File 13</span>   
+                    </li>   
+                </ul>   
+            </li>   
+            <li>   
+                <span>File 2</span>   
+            </li>   
+            <li>   
+                <span>File 3</span>   
+            </li>   
+        </ul>   
+    </li>   
+    <li>   
+        <span>File21</span>   
+    </li>   
+</ul>  
+-->
+<ul id="myId">
+	
+</ul>       
+</body>  
+</html>

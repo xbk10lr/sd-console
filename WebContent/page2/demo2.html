@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>DataGrid</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<!--让easyUI支持中文-->
+	<script type="text/javascript" src="../easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript">
+		$(function(){
+//			$('#dg').datagrid({    
+//			    url:'datagrid_data.json',    
+//			    columns:[[    
+//			        {field:'stuNum',title:'学号',width:100},    
+//			        {field:'stuName',title:'姓名',width:100},    
+//			        {field:'stuSex',title:'性别',width:100,},
+//					{field:'stuAge',title:'年龄',width:100,},
+//					{field:'stuQQ',title:'QQ',width:100,},    
+//			    ]],
+//				pagination:true    
+//			});  
+           $('#dg').datagrid({
+		   	   url:'datagrid_data.json'
+		   });    
+			    
+		})	   
+	</script>
+  </head>
+  <body>   
+  <!-- html形式实现
+<table class="easyui-datagrid">   
+    <thead>   
+        <tr>   
+            <th data-options="field:'code'">编码</th>   
+            <th data-options="field:'name'">名称</th>   
+            <th data-options="field:'price'">价格</th>   
+        </tr>   
+    </thead>   
+    <tbody>   
+        <tr>   
+            <td>001</td><td>name1</td><td>2323</td>   
+        </tr>   
+        <tr>   
+            <td>002</td><td>name2</td><td>4612</td>   
+        </tr>   
+    </tbody>   
+</table>  
+-->
+<!--
+<table id="dg"></table>
+--> 
+   
+   <table id="dg" class="easyui-datagrid" style="width:700px;height:350px"   
+        data-options="fitColumns:true,singleSelect:true,pagination:true,toolbar:'#tb'">   
+    <thead>   
+        <tr>   
+            <th data-options="field:'stuNum',width:100">学号</th>   
+            <th data-options="field:'stuName',width:100">姓名</th> 
+            <th data-options="field:'stuSex',width:100">性别</th>
+			<th data-options="field:'stuAge',width:100">年龄</th>
+			<th data-options="field:'stuQQ',width:100">QQ</th>   
+        </tr>   
+    </thead>   
+   </table>  
+   <div id="tb">
+   	 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'"> 新建</a>
+	 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'"> 编辑</a>
+	 <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'"> 删除</a>
+   </div>
+   <div id="dlg" class="easyui-dialog" style="width:300px;height:200px;background:gray" data-options="buttons:'#btns',closed:true">
+   	   <form id="fm">
+   	   	   <center>学员信息</center>
+   	   	   学号:<input type="text" name="stuNum"/><br/>
+		   姓名:<input type="text" name="stuName"/><br/>
+		   性别:<input type="text" name="stuSex"/><br/>
+		   年龄:<input type="text" name="stuAge"/><br/>
+		  QQ:<input type="text" name="stuQQ"/><br/>
+   	   </form>
+   </div>
+   <div id="btns">
+   	<a href="#" class="easyui-linkbutton">保存</a>
+	 <a href="#" class="easyui-linkbutton">取消</a>
+   </div>
+</body>  
+</html>

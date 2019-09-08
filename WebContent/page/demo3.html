@@ -1,0 +1,45 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>Dialog</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		//js实现
+       $(function(){
+	   	$("#dd").dialog({
+		   	title: 'My Dialog',    
+		    width: 400,    
+		    height: 200,    
+		    closed: false,    
+		    modal: true  
+		   })
+	   });
+	</script>
+  </head>
+  <body>
+  	<!--html实现-->
+	<!--
+  	<div id="dd" class="easyui-dialog" title="My Dialog" style="width:400px;height:200px;"   
+        data-options="iconCls:'icon-save',resizable:true,modal:true">   
+    	Dialog Content.    
+	</div>
+	-->
+  <div id="dd">Dialog Content.</div>  
+
+
+  
+
+
+  </body>
+</html>

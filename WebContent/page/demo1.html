@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>Panel</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+//		  $('#mydd').draggable({revert:false,proxy: 
+//		  		function(source){
+//					var p = $('<div style="border:1px solid #ccc;width:300px;height:50px;background:red"></div>');
+//					p.html($(source).html()).appendTo('body');
+//					return p;
+//				}
+//		});
+ 		$("#mydd").draggable({
+			onBeforeDrag:function(){
+				alert("在拖动之前触发!");
+			},
+			onStartDrag:function(){
+				alert("在开始拖动触发!");
+			}
+		}); 
+		  //如果没有参数传递,那么当光标一定到id为dd的元素上时,就可以拖动
+		  //当光标移动到id为title元素上时,才能拖动
+		  //$('#dd').draggable({handle:'#title'});
+		   	
+		});
+	</script>
+  </head>
+  
+  <body>
+  	<!--
+		<div id="mydd" style="width:300px;height:200px;background:#ccc" class="easyui-draggable"
+			data-options="revert:true,edge:40,deltaX:30,deltaY:30,proxy:'clone'">
+		</div>
+		-->
+	
+   <div id="mydd" style="width:300px;height:200px;background:#ccc">
+   	
+   </div>
+	
+   <!---
+       data-options="handle:'#title'": 如果没有data-options,光标移动到外层div的任何一个区域,
+	    都可以拖动.  当我光标移动到id胃title的元素上时,鼠标才变样式,只有鼠标一定到id为title元素上时,才可以
+	   实现拖动效果
+   -->
+
+<!--   
+   <div id="dd" class="easyui-draggable" data-options="handle:'#title',revert:false,cursor:'help',disabled:false,proxy:'clone',edge:10" style="width:300px;height:300px;background:red">
+     <div id="title" style="background:green;">title</div>
+   </div>--->
+   
+   
+   <!--
+   <div id="dd" style="width:100px;height:100px;background:pink"> 
+		<div id="title" style="background:#ccc;">title</div> 
+    </div>
+  ->
+
+  </body>
+</html>

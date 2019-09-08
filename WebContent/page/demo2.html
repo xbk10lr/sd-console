@@ -1,0 +1,62 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>窗口</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+	  $(function(){
+//	  	 $("#win").window({
+//		 	width:600,    
+//		    height:400,    
+//    		modal:true   
+//		 });
+	  });
+	 function show(){
+//	 	 $("#win").window({
+//		 	width:600,    
+//		    height:400,    
+//    		modal:true,
+//			iconCls:'icon-save',
+//			closed:false,
+//		 });
+	$("#win").window("center").window({
+		height:400,
+		width:300,
+		closed:false
+	});
+	 }
+	</script>
+  </head>
+  <body>
+  	<input type="button" name="user" onclick="show()" value="点击我试试"/>
+	<!--html形式实现window窗口-->
+	<!--
+    <div id="win" class="easyui-window" title="My Window" style="width:600px;height:400px;"   
+        data-options="iconCls:'icon-cancel',modal:true,closable:true,closed:true">   
+    	Window Content    
+	</div>
+	-->
+	
+	<div id="win" class="easyui-window" data-options="closed:true">
+		asdfsafsaf
+	</div>
+	
+</div>  
+
+  
+  
+
+
+  </body>
+</html>

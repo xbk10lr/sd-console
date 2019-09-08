@@ -1,0 +1,57 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>Tab选项卡</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+	<!--引入Jquery主文件-->
+	<script type="text/javascript" src="../easyui/jquery.min.js"></script>
+	<!--引入JqueryEasyUI主文件-->
+	<script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+	   $(function(){
+	   	 //$("#tt").draggable();
+		 $("#tt").tabs({
+		 	border:true,    
+    		onSelect:function(title){    
+        		alert(title+' is selected');    
+    		} 
+		 });
+	   });
+	</script>
+  </head>
+  <body>
+  	<!--
+  <div id="tt" class="easyui-tabs" style="width:500px;height:250px;">   
+    <div title="张三" style="padding:20px;">   
+        tab1    
+    </div>   
+    <div title="BBBB" data-options="closable:true" style="overflow:auto;padding:20px;">   
+        tab2  
+    </div>   
+    <div title="Tab3" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;">   
+        tab3    
+    </div>   
+  </div>
+  -->  
+
+<div id="tt">
+	<div title="张三" style="padding:20px;">   
+        tab1    
+    </div>   
+    <div title="BBBB"  style="overflow:auto;padding:20px;">   
+        tab2  
+    </div>   
+    <div title="Tab3"  style="padding:20px;">   
+        tab3    
+    </div>   
+</div>
+
+  </body>
+</html>

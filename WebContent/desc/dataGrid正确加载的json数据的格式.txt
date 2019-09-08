@@ -1,0 +1,35 @@
+create database stu;
+use stu;
+create table stu(
+  stuId int primary key auto_increment,
+  stuNum int,
+  stuName varchar(30),
+  stuSex varchar(30),
+  stuAge int,
+  stuQQ varchar(30)
+);
+insert into stu values(null,1,"tom1","female",18,"12646123");
+insert into stu values(null,2,"tom2","female",18,"12646123");
+insert into stu values(null,3,"tom3","female",18,"12646123");
+insert into stu values(null,4,"tom4","female",18,"12646123");
+insert into stu values(null,5,"tom5","female",18,"12646123");
+insert into stu values(null,6,"tom6","female",18,"12646123");
+insert into stu values(null,7,"tom7","female",18,"12646123");
+insert into stu values(null,8,"tom8","female",18,"12646123");
+insert into stu values(null,9,"tom9","female",18,"12646123");
+insert into stu values(null,10,"tom10","female",18,"12646123");
+insert into stu values(null,11,"tom11","female",18,"12646123");
+insert into stu values(null,12,"tom12","female",18,"12646123");
+
+
+delete from stu where stuId='12';
+
+update stu  set stuNum=100,stuName='mary',stuSex='male',stuAge=20,stuQQ='123456' where stuId=2;
+
+
+
+
+
+
+
+

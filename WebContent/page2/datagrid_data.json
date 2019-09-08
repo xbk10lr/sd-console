@@ -1,0 +1,16 @@
+﻿{
+ "total":21,
+  "rows":
+ [
+ {"stuAge":22,"stuId":27,"stuName":"2","stuNum":"22","stuQQ":"233323","stuSex":"2"},
+ {"stuAge":1,"stuId":30,"stuName":"z","stuNum":"z","stuQQ":"z","stuSex":"z"},
+ {"stuAge":11,"stuId":34,"stuName":"11","stuNum":"11","stuQQ":"1","stuSex":"11"},
+ {"stuAge":11,"stuId":35,"stuName":"11","stuNum":"11","stuQQ":"1","stuSex":"11"},
+ {"stuAge":2,"stuId":36,"stuName":"2","stuNum":"2","stuQQ":"1","stuSex":"female"},
+ {"stuAge":11,"stuId":37,"stuName":"11","stuNum":"11","stuQQ":"1","stuSex":"11"},
+ {"stuAge":11,"stuId":38,"stuName":"11","stuNum":"11","stuQQ":"1","stuSex":"11"},
+ {"stuAge":11,"stuId":39,"stuName":"11","stuNum":"11","stuQQ":"1","stuSex":"11"},
+ {"stuAge":11,"stuId":40,"stuName":"11","stuNum":"11","stuQQ":"1","stuSex":"11"},
+ {"stuAge":18,"stuId":41,"stuName":"tom20","stuNum":"11","stuQQ":"1","stuSex":"11"}
+ ]
+}
